@@ -1,0 +1,16 @@
+{% extends "base.html"%}
+
+{% block content %}
+<div class='row'>
+    <div class="col-sm-6">
+        Welcome to {{title}}
+        <form method="POST">{% csrf_token %} <br>
+
+         {{form.as_p}}
+        <button type="submit" >Submit</button>
+          
+
+        </form>
+    </div>
+</div>
+{% endblock %}

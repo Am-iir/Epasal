@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+    {% block content %}
+    <p>{{title}}</p>
+
+    {% if request.user.is_authenticated %}
+
+    <h3>Premium</h3>
+    <p>{{premium_content}}</p>
+    {% endif %}
+    
+    {% endblock %}
+

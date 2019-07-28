@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col">
+            Results for <b> {{ query}} </b>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">   
+            {% for obj in obj_list%}        
+        
+        <div class="col">
+        <!-- <a href="{{ obj.get_absolute_url }}" >{{obj.title}} </a></br> -->
+            <div class="card" style="width: 18rem;" >
+                {% if obj.image %}
+                <img src="{{ obj.image.url}}" class="card-img-top" alt="..." height="200" width="20">
+                {% endif %}
+                <div class="card-body">
+                <h3 class="card-title">{{obj.title}}</h5>
+                <p class="card-text">{{ obj.description | truncatewords:20 }}.</p>
+                <a href="{{ obj.get_absolute_url }}" class="btn btn-primary">View</a>
+                </div>
+            </div>
+        </div>      
+           
+        {% endfor %}
+    </div>
+
+{% endblock %}
